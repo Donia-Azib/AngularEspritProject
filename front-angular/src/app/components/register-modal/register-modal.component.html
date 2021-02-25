@@ -1,0 +1,64 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title justify-content-center" id="modal-basic-title">Sign Up  <h5  *ngIf="Haserrors" class="form-text text-danger"> {{RegisterErrors}}</h5>  </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <form [formGroup]="myForm">
+                <div class="form-row justify-content-center">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input formControlName="username" type="text" class="form-control" id="username" >
+                        <div *ngIf="username.touched && username.invalid">
+                            <small class="form-text text-danger" *ngIf="username.errors.required">Username is required <br></small>
+                            <small class="form-text text-danger" *ngIf="username.errors.minlength">Username should have a least {{ username.errors.minlength.requiredLength }} characters <br></small>
+                            <small class="form-text text-danger" *ngIf="username.errors.pattern">Username pattern is invalid <br></small>
+                          </div>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div *ngIf="email.touched && email.invalid">
+                            <small class="form-text text-danger" *ngIf="email.errors.required">Email is required <br></small>
+                            <small class="form-text text-danger" *ngIf="email.errors.pattern">Email pattern is invalid <br></small>
+                        </div> 
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="password.touched && password.invalid">
+                            <small class="form-text text-danger" *ngIf="password.errors.required">password is required <br></small>
+                            <small class="form-text text-danger" *ngIf="password.errors.minlength">password must contain {{ password.errors.minlength.requiredLength }} characters<br></small>
+                        </div> 
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group">
+                        <label for="exampleInputPassword">Confirm Password</label>
+                        <input formControlName="cnf_password" type="password" class="form-control" id="exampleInputPassword">
+                        <div *ngIf="cnf_password.touched && cnf_password.invalid">
+                            <small class="form-text text-danger" *ngIf="cnf_password.errors.required">password is required <br></small>
+                            <small class="form-text text-danger" *ngIf="cnf_password.errors.minlength">password must contain {{ password.errors.minlength.requiredLength }} characters<br></small>
+                        </div> 
+                        <div *ngIf="cnf_password.valid && cnf_password.value != password.value">
+                            <small class="form-text text-danger" >Password do not much<br></small>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer justify-content-center">
+      <button type="button" class="btn btn-outline-dark" [disabled]="myForm.invalid" (click)="Register()">Sign Up</button>
+    </div>
+  </ng-template>
+  
+<!-- return to login modal -->
+  <app-login-modal #myModal></app-login-modal>

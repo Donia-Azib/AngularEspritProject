@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Blogger</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <select 
+            class="custom-select my-2 my-sm-0" 
+            id="inlineFormCustomSelect" 
+            (change)='changeLang($event.target.value)'
+            >
+              <option value="en" [selected]="lang == 'en'" >English</option>
+              <option value="fr" [selected]="lang == 'fr'" >Frensh</option>
+              <option value="es" [selected]="lang == 'es'" >Espangol</option>
+          </select>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" *ngIf="isLogged" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!isLogged" (click)="open('login')">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!isLogged" (click)="open('register')">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" *ngIf="isLogged" >Profil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" *ngIf="isLogged" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!--  class="navbar-expand-md navbar navbar-dark bg-light" -->
+ <!-- <img [routerLink]="['']" [src]="imageURL" alt="logo"  width="80px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="form-inline my-2 my-lg-0 ml-auto">
+      <select 
+      class="custom-select my-2 my-sm-0" 
+      id="inlineFormCustomSelect" 
+      (change)='changeLang($event.target.value)'
+      >
+        <option value="en" [selected]="lang == 'en'" >English</option>
+        <option value="fr" [selected]="lang == 'fr'" >Frensh</option>
+        <option value="es" [selected]="lang == 'es'" >Espangol</option>
+      </select>
+    </div>
+    <form class="form-inline my-2 my-lg-0 ml-auto">
+      <button class="btn btn-outline-warning my-2 my-sm-0" *ngIf="!isLogged" (click)="open('login')">Login</button>
+      <button class="btn btn-outline-warning mx-3 my-2 my-sm-0" *ngIf="!isLogged" (click)="open('register')">Register</button>
+      <img src="./assets/images/user-icon.png" alt="..." class="bd-placeholder-img rounded-circle" width="50" height="50" *ngIf="isLogged"  >
+      <button class="btn btn-outline-warning mx-3 my-2 my-sm-0" *ngIf="isLogged" (click)="logout()">Logout</button>
+    </form>
+  </div>
+</nav> -->
+
+<app-login-modal #myModal></app-login-modal>
+<app-register-modal #registerModal ></app-register-modal>
+
