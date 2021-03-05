@@ -13,7 +13,7 @@ export class ArticleComponent implements OnInit {
 
   private _id:string;
   public sub$1 : Subscription;
-  public articleDetail : any;
+  public articleDetail : Article;
   
   constructor(private router :Router,private service:ArticleService) {
     this._id = this.router.getCurrentNavigation().extras.state._id
@@ -29,9 +29,13 @@ export class ArticleComponent implements OnInit {
         console.log(res);
         
         this.articleDetail = res
+        // if(this.articleDetail?.imageUrl == null)
+        //   this.articleDetail.imageUrl = '../../../assets/images/cover2.jpg'
       },
       err=>{console.log(err);
       })
   }
+
+  
 
 }

@@ -4,9 +4,10 @@ h1 {
     font-weight: bold;
   }
   h4{
+    margin-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: unset;
-    color: white;
+    color: black;
   }
   h1>p{
     font-family: 'Montserrat Alternates', sans-serif;
@@ -223,5 +224,9 @@ h1 {
     header.masthead .post-heading .subheading {
       font-size: 30px;
     }
+  }
+  .team {
+    display: flex;
+    justify-content: center;
   }
   

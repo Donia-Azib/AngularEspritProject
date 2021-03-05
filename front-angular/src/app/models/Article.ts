@@ -6,9 +6,9 @@
   export class Article {
 
     constructor(
-        private title?:String,private description?:String,
-        private imageUrl?:String,private publish?:Boolean,
-        private userId?:String,private _id?:String)
+        public title?:string,public description?:string,
+        public imageUrl?:string,public publish?:Boolean,
+        public userId?:string,public username?:string,public _id?:string)
     {}
 
 }

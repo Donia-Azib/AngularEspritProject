@@ -1,0 +1,119 @@
+.nav-pills {
+    border-bottom: 1px solid #ddd;
+}
+.nav-pills li a {
+    background: #1f4e79;
+    color: #fff;
+    display: block;
+    line-height: 2em;
+    padding: 7px 15px;
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+    margin: 50px 2px 0;
+}
+ul li a {
+    text-decoration: none;
+}
+.nav-pills li a.active {
+    background: #3482ca;
+    border: none;
+    color: #FFF;
+}
+
+/* test */
+header.masthead {
+    margin-bottom: 20px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+  }
+  
+  header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #868e96;
+    opacity: 0.5;
+  }
+  
+  header.masthead .site-heading {
+    padding: 100px 0 100px;
+    color: white;
+  }
+  
+   
+  header.masthead .site-heading {
+    text-align: center;
+  }
+  
+  header.masthead .site-heading h1 {
+    font-size:  20px;
+    margin-top: 0;
+  }
+  
+  header.masthead .site-heading .subheading {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 20px 0 0;
+    font-style: italic ;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  header.masthead .site-heading .subheading2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    display: block;
+    margin: 20px 0 0;
+    color: black;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    header.masthead .site-heading h1 {
+      font-size: 40px;
+    }
+  }
+  
+  header.masthead .post-heading h1 {
+    font-size: 10px;
+  }
+  
+  header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block;
+  }
+  
+  header.masthead .post-heading .subheading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  header.masthead .post-heading .meta {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lora', 'Times New Roman', serif;
+  }
+  
+  header.masthead .post-heading .meta a {
+    color: #fff;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    header.masthead .post-heading h1 {
+      font-size: 55px;
+    }
+    header.masthead .post-heading .subheading {
+      font-size: 30px;
+    }
+  }
+

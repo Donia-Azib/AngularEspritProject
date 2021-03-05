@@ -1,0 +1,59 @@
+  .right {
+    position: inherit;
+    right: 60px;
+  }
+
+  .card-header{
+      background-color: white;
+  }
+
+  .team {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .post-preview > a {
+    color: #212529;
+  }
+  
+  .post-preview > a:focus, .post-preview > a:hover {
+    text-decoration: none;
+    color: #0085A1;
+    cursor: pointer;
+  }
+  
+  .post-preview > a > .post-title {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .post-preview > a > .post-subtitle {
+    font-size: 18px;
+    font-weight: lighter;
+    margin: 0 0 10px;
+  }
+  
+  .post-preview > .post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #868e96;
+  }
+  
+  .post-preview > .post-meta > a {
+    text-decoration: none;
+    color: #212529;
+  }
+  
+  .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
+    text-decoration: underline;
+    color: #0085A1;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .post-preview > a > .post-title {
+      font-size: 22px;
+    }
+  }

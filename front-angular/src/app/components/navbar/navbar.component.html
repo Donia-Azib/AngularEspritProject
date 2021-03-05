@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <select 
             class="custom-select my-2 my-sm-0" 
             id="inlineFormCustomSelect" 
@@ -17,7 +17,7 @@
               <option value="fr" [selected]="lang == 'fr'" >Frensh</option>
               <option value="es" [selected]="lang == 'es'" >Espangol</option>
           </select>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="" *ngIf="isLogged" >Home</a>
         </li>
@@ -28,7 +28,7 @@
           <a class="nav-link" *ngIf="!isLogged" (click)="open('register')">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" *ngIf="isLogged" >Profil</a>
+          <a class="nav-link" [routerLink]="['/profil']" *ngIf="isLogged" >Profil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="" *ngIf="isLogged" (click)="logout()">Logout</a>

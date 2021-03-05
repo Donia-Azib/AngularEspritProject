@@ -51,6 +51,8 @@ export class LoginModalComponent implements OnInit,OnDestroy {
       console.log( `Closed with: ${result}`);
     }, (reason) => {
       console.log(`Dismissed`);
+      
+      window.location.reload(); 
     });
   }
 
@@ -67,6 +69,8 @@ export class LoginModalComponent implements OnInit,OnDestroy {
         localStorage.setItem('UserId',userId);
         this.router.navigate(['/article-list']);
         this.modalService.dismissAll()
+        
+        window.location.reload(); 
       },
       error=>
       {

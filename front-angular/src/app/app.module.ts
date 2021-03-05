@@ -17,6 +17,10 @@ import { HomeComponent } from './components/home/home.component';
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ArticleComponent } from './components/article/article.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import { ProfileInfoModalComponent } from './components/profile-info-modal/profile-info-modal.component';
+import { ProfileArticleListComponent } from './components/profile-article-list/profile-article-list.component';
+import { AddArticleFormComponent } from './components/add-article-form/add-article-form.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
@@ -33,7 +37,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     ArticleListComponent,
     ProfileComponent,
-    ArticleComponent
+    ArticleComponent,
+    ProfileInfoComponent,
+    ProfileInfoModalComponent,
+    ProfileArticleListComponent,
+    AddArticleFormComponent
   ],
   imports: [
     BrowserModule,

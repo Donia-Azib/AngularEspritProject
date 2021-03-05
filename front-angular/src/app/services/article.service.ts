@@ -8,12 +8,11 @@ import { Article } from '../models/Article';
 export class ArticleService {
   private apiHost ="http://localhost:3000/api/stuff"
   private api_all_article = this.apiHost+"/"
-  private api_add_article = this.apiHost+"/"
+  private api_add_article = this.apiHost+"/add"
   private api_update_article = this.apiHost+"/"//+article_id
   private api_delete_article = this.apiHost+"/"//+article_id
   private api_get_article = this.apiHost+"/"//+article_id
   private api_get_user_article = this.apiHost+"/user/blog"
-
 
 
   private auth_token = localStorage.getItem('Mytoken');
@@ -30,8 +29,12 @@ export class ArticleService {
     return this.http.get(this.api_all_article,{ headers: this.headers });
   }
 
-  AddArticle(article:Article){
-    return this.http.post(this.api_add_article,article,{ headers: this.headers })
+  AddArticle(article:Article,image:File){
+    const thingData = new FormData();
+    thingData.append('thing', JSON.stringify(article));
+    thingData.append('image', image, article.title);
+    
+    return this.http.post(this.api_add_article,thingData,{ headers: this.headers })
   }
 
   ReadOneArticle(id:string){

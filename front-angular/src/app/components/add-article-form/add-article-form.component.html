@@ -1,0 +1,73 @@
+<app-navbar ></app-navbar>
+<main role="main">
+    <div class="container">
+        <!-- (ngSubmit)="saveUser()" -->
+        <form [formGroup]="myForm" >
+            <div class="form-row mb-3">
+                <div class="form-group col">
+                  <label for="title">Article title</label>
+                  <input formControlName="title" type="text" class="form-control" id="title" placeholder="Why do we use it?" >
+                  <div *ngIf="title.touched && title.invalid">
+                    <small class="form-text text-danger" *ngIf="title.errors.required">Title is required <br></small>
+                    <small class="form-text text-danger" *ngIf="title.errors.minlength">Title should have a least {{ title.errors.minlength.requiredLength }} characters <br></small>
+                    <small class="form-text text-danger" *ngIf="title.errors.pattern">Title pattern is invalid <br></small>
+                  </div>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col">
+                    <label for="desc">Article Description</label>
+                    <textarea formControlName="desc" class="form-control" id="desc" rows="3" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "></textarea>
+                    <div *ngIf="desc.touched && desc.invalid">
+                      <small class="form-text text-danger" *ngIf="desc.errors.required">Description is required <br></small>
+                      <small class="form-text text-danger" *ngIf="desc.errors.minlength">Description should have a least {{ desc.errors.minlength.requiredLength }} characters <br></small>
+                      <small class="form-text text-danger" *ngIf="desc.errors.pattern">Description pattern is invalid <br></small>
+                    </div> 
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col">
+                  <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+                  <input type="file" #filePicker (change)="onImagePick($event)">
+                  <div class="image-preview" *ngIf="imagePreview">
+                    <img [src]="imagePreview" alt="">
+                  </div>
+                    <!-- <label ></label>
+                        <input
+                               type="file"
+                               accept="image/*"
+                               (change)="processFile($event)"
+                              >
+                        <button type="button" class="btn btn-outline-secondary" (click)="onUpload()" >Upload</button> -->
+
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col">
+                    <label >Publish Article ?</label>
+                    <input type="radio" name="publish" formControlName="publish" value="yes"> Yes                         
+                    <input type="radio" name="publish" formControlName="publish" value="no"> No<br>
+                    <!-- <div class="form-check">
+                        <input class="form-check-input" type="radio" name="publish" id="yes">
+                        <label class="form-check-label" for="yes">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="publish" id="no" checked>
+                        <label class="form-check-label" for="no">
+                          No
+                        </label>
+                      </div> -->
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col">
+                  <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" (click)="AddArticle()" >Confirm </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<app-footer></app-footer>

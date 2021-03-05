@@ -1,12 +1,12 @@
 <app-navbar></app-navbar>
-<header class="masthead" style="background-image: url('assets/images/home-bg.jpg')">
+<header class="masthead" style="background-image: url('assets/images/cover.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            <h1>What is Lorem Ipsum?</h1>
+            <span class="subheading">"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece"</span>
           </div>
         </div>
       </div>
@@ -27,18 +27,19 @@
               </h3>
             </a>
             <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
+              <a href="#" *ngIf="'article.username'">{{article.username}}</a>
+              <a href="#" *ngIf="'!article.username'">......</a>
               on September 24, 2019</p>
           </div>
           <hr>
         </div>
 
         <!-- Pager -->
-        <div class="clearfix">
+        <!-- <div class="clearfix">
           <a class="btn btn-outline-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div>
+</div>
 
 <app-footer></app-footer>

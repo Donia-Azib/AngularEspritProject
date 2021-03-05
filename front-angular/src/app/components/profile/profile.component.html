@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<app-navbar></app-navbar>
+
+<div role="main">
+    <header class="masthead" style="background-color:gray">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="site-heading">
+                <h1>Hello ! Welcome to your profile <span  class="subheading2">{{username}}</span> </h1>
+                <span class="subheading">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <div class="container">
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+            <li ngbNavItem>
+              <a ngbNavLink>Profil Info</a>
+              <ng-template ngbNavContent><app-profile-info></app-profile-info></ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink>My articles</a>
+              <!-- add  -->
+              <!-- in article update and delete -->
+              <ng-template ngbNavContent><app-profile-article-list></app-profile-article-list></ng-template>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav"></div>
+    </div>
+
+</div>
+
+
+<app-footer></app-footer>
